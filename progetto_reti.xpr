@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/cosim/Projects/progetto-reti/progetto_reti.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/alpha/Documents/ProjectReti/progetto_reti.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2e9cdc05da6e4d7a898897d86312a9e8"/>
@@ -73,6 +73,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/registro.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/automa.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
