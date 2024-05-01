@@ -31,7 +31,7 @@ end automa;
 architecture automa_arch of automa is
     type state_type is( RESET, S0, S1, S2, S3, DONE);
     signal state, next_state : state_type;
-    signal j : std_logic_vector(9 downto 0);
+    signal j : unsigned(9 downto 0);
     
 begin
     process(i_clk, i_rst)
@@ -50,7 +50,7 @@ begin
                     if i_start = '1' then
                         o_mem_en <= '1';
                         o_mem_we <= '0';
-                        o_mem_addr <= std_logic_vector(unsigned(i_add) + unsigned(j));                        
+                        o_mem_addr <= std_logic_vector(unsigned(i_add) + j);                        
                         o_done <= '0';
                         counter_reset <= '1';
                         counter_zero <= '0';
@@ -65,7 +65,7 @@ begin
                     o_mem_we <= '0';
                     o_done <= '0';
                     
-                    if unsigned(j) <= unsigned(i_k) then
+                    if j <= unsigned(i_k) then
                         if i_mem_data = "00000000" and reg_value = "00000000" then
                             counter_reset <= '0';
                             counter_zero <= '1';
@@ -87,7 +87,58 @@ begin
                     else
                         next_state <= DONE;
                     end if;
-                
+                when S1 =>
+                    o_mem_en <= '1';
+                    o_mem_we <= '1';
+                    o_mem_addr <= std_logic_vector(unsigned(i_add) + j);
+                    j <= j + 1;
+                    o_mem_data <= reg_value;
+                    
+                    counter_reset <= '0';
+                    counter_zero <= '0';
+                    counter_decr <= '0';
+                    reg_en <= '0';
+                    o_done <= '0';
+                    
+                    next_state <= S2;
+                when S2 =>
+                    o_mem_en <= '1';
+                    o_mem_we <= '1';
+                    o_mem_addr <= std_logic_vector(unsigned(i_add) + j);
+                    j <= j + 1;
+                    o_mem_data <= counter;
+                    
+                    counter_reset <= '0';
+                    counter_zero <= '0';
+                    counter_decr <= '0';
+                    reg_en <= '0';
+                    o_done <= '0';
+                    
+                    next_state <= S3;
+                when S3 =>
+                    if j <= unsigned(i_k) then
+                        o_mem_en <= '1';
+                        o_mem_we <= '0';
+                        o_mem_addr <= std_logic_vector(unsigned(i_add) + j);                        
+                        o_done <= '0';
+                        
+                        counter_reset <= '0';
+                        counter_zero <= '0';
+                        counter_decr <= '0';
+                        reg_en <= '0';
+                        
+                        next_state <= S0;
+                    else
+                        next_state <= DONE;
+                        o_mem_en <= '0';
+                        o_mem_we <= '0';
+                    end if;
+                when DONE =>
+                    o_mem_en <= '0';
+                    o_mem_we <= '0';
+                    o_done <= '1';
+                    reg_new_value <= "00000000";
+                    next_state <= RESET;
             end case;
             state <= next_state;         
             end if;
