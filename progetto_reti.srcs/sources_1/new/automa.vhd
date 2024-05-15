@@ -65,7 +65,7 @@ begin
                     o_mem_we <= '0';
                     o_done <= '0';
                     
-                    if j <= unsigned(i_k) then
+                    if j < unsigned(i_k) then
                         if i_mem_data = "00000000" and reg_value = "00000000" then
                             counter_reset <= '0';
                             counter_zero <= '1';
@@ -116,7 +116,7 @@ begin
                     
                     next_state <= S3;
                 when S3 =>
-                    if j <= unsigned(i_k) then
+                    if j < unsigned(i_k) then
                         o_mem_en <= '1';
                         o_mem_we <= '0';
                         o_mem_addr <= std_logic_vector(unsigned(i_add) + j);                        
