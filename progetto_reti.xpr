@@ -189,6 +189,127 @@
         <Option Name="xsim.simulate.runtime" Val="10000ns"/>
       </Config>
     </FileSet>
+    <FileSet Name="sim_2" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_2">
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_2.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_2.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_4.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_4.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_3.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_3.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_12.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_12.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_5.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_5.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_6.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_6.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_9.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_9.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_8.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_8.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_2/imports/Testbench2/project_tb_7.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench2/project_tb_7.vhd"/>
+          <Attr Name="ImportTime" Val="1716420320"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="project_tb_02"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="10000ns"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_3" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_3">
+      <File Path="$PSRCDIR/sim_3/imports/Testbench3/i_rst_tb.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench3/i_rst_tb.vhd"/>
+          <Attr Name="ImportTime" Val="1716420512"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_3/imports/Testbench3/i_start_tb.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/Testbench3/i_start_tb.vhd"/>
+          <Attr Name="ImportTime" Val="1716420512"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="i_rst_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="10000ns"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
