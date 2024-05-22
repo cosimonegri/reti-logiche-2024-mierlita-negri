@@ -26,7 +26,7 @@ begin
             
         elsif i_clk'event and i_clk = '1' then
         
-            if decrement = '1' and not stored_value = "00000000" then
+            if decrement = '1' and stored_value /= "00000000" then
                 stored_value <= std_logic_vector(unsigned(stored_value) - "00000001");
             elsif zero = '1' then
                 stored_value <= "00000000";
