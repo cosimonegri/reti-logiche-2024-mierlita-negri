@@ -28,7 +28,7 @@ end automa;
 architecture automa_arch of automa is
     type state_type is ( RESET, WAIT_RAM, S0, S1, S2, S3, DONE);
     signal state : state_type;
-    signal j : unsigned(9 downto 0);
+    signal j : unsigned(15 downto 0);
     signal last_value :  std_logic_vector(7 downto 0);
     
 begin
@@ -40,23 +40,23 @@ begin
                 o_mem_en <= '0';
                 o_mem_we <= '0';
                 o_done <= '0';
-                j <= "0000000000";
-                last_value <= "00000000";
                 state <= RESET;
                 
             elsif i_clk'event and i_clk = '1' then
                 case state is
                     when RESET =>
+                        o_mem_en <= '0';
+                        o_mem_we <= '0';
                         o_done <= '0';
-                        j <= "0000000000";
-                        last_value <= "00000000";
+                        j <= (others => '0');
+                        last_value <= (others => '0');
+                        counter_reset <= '1';
+                        counter_zero <= '0';
+                        counter_decr <= '0';
                         if i_start = '1' then
                             o_mem_en <= '1';
                             o_mem_we <= '0';
                             o_mem_addr <= std_logic_vector(unsigned(i_add) + j);
-                            counter_reset <= '1';
-                            counter_zero <= '0';
-                            counter_decr <= '0';
                             next_state := WAIT_RAM;
                         else
                             next_state := RESET;
